@@ -14,6 +14,7 @@ def getSuggestionByLocation(address):
 def getSuggestionByLatLong(lat,longt):
     return fetchByLatLong(lat,longt)
 
-
 if __name__ == '__main__':
     uvicorn.run(app, host='localhost', port=5000)
+
+
