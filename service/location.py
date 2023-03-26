@@ -79,7 +79,7 @@ def fetch(adr):
     return name
 
 def fetchByLatLong(lat,longt):
-    total=nearby(lat,longt)
+    total=nearbyLatLong(lat,longt)
     print(len(total))
     total = sorted(total, key=itemgetter('rating'), reverse=True)                    #sorting a list of dict by one value which is rating
     name=[]
