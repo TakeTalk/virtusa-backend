@@ -1,6 +1,5 @@
 import requests
 from operator import itemgetter
-# import json
 
 def lat_solve(adr) :
     url = f"https://maps.googleapis.com/maps/api/geocode/json?address={adr}&key=AIzaSyDlFsW1aC6dcvXX7mZp_jpF1pMOqfy2ETs"
