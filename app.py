@@ -1,8 +1,7 @@
+import uvicorn
 
+from config import *
 from controller.suggestion import *
 
 if __name__ == '__main__':
-    runApplication()
-
-# currently we are running the suggestion.py,we are not using this app.py
-
+    uvicorn.run(app, host='127.0.0.1', port=5000)
