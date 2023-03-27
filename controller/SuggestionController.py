@@ -1,4 +1,4 @@
-from service.location import *
+from service.LocationService import *
 
 from config import *
 
