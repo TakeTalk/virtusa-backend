@@ -1,10 +1,10 @@
-class UserBody:
-    
-    def __int__(self):
-        self.email = ''
-        self.phone = ''
-        self.firstName = ''
-        self.middleName = ''
-        self.lastName = ''
-        self.rewardsPoints = ''
+from pydantic import BaseModel
+class UserBody(BaseModel):
+    email: str
+    phone: str
+    firstName: str
+    middleName: str | None = None
+    lastName: str
+    rewardsPoints: int
+
 

@@ -1,9 +1,21 @@
-from model.UserModel import UserBody
-
-userBody = UserBody()
+from Connection import *
 
 
-def test():
-    userBody.email = 'anikdutta0810@gmail.com'
+userCollection = database['userDetails']
+
+
+def signupUser(userDetails):
+
+    try:
+        existingUser = userCollection.find_one({"email": userDetails["email"]})
+        if existingUser is None:
+            userCollection.insert_one(userDetails)
+            return userDetails
+        else:
+            return 'User exists'
+    except:
+        print('something went wrong')
+
+
 
 
