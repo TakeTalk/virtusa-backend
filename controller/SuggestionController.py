@@ -1,6 +1,6 @@
-from service.LocationService import *
-
 from config import *
+
+from service.LocationService import *
 
 @app.get('/suggest-hospital-by-address/')
 def getSuggestionByLocation(address):
