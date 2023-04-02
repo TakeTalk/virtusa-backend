@@ -5,10 +5,12 @@ from nltk.corpus import stopwords
 nltk.download('punkt')
 nltk.download('stopwords')
 
+from service.cityNameService import *
+
 stop =stopwords.words('english')
 pun = list(string.punctuation)
 stop = stop+pun
-my_prefe =['hospital', 'area','nearby','cardiology','suggest','doctor']
+
 
 #sentence= input()
 
@@ -16,9 +18,8 @@ my_prefe =['hospital', 'area','nearby','cardiology','suggest','doctor']
 def tokenize(sentence):
     words =word_tokenize(sentence)
     clean = [w for w in words if not w in stop]
-    refine_words= [f for f in clean if f in my_prefe]
+    refine_words= [f for f in clean if f in knowledge_test]
     return refine_words
-#print(tokenize(sentence))
 
 
 
