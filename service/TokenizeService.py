@@ -3,23 +3,26 @@ import string
 from config import *
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
+from model.knowledgebase import Knowledge
+
 nltk.download('punkt')
 nltk.download('stopwords')
 
-stop =stopwords.words('english')
-pun = list(string.punctuation)
-stop = stop+pun
-my_prefe =['hospital', 'area','nearby','cardiology','suggest','doctor']
+knowledgeWords = Knowledge()
 
-#sentence= input()
+allWords = knowledgeWords.getKnowledgeBaseWords();
+
+
+stop = stopwords.words('english')
+pun = list(string.punctuation)
+stop = stop + pun
+
+
+# sentence= input()
 
 
 def tokenize(sentence):
-    words =word_tokenize(sentence)
+    words = word_tokenize(sentence)
     clean = [w for w in words if not w in stop]
-    refine_words= [f for f in clean if f in my_prefe]
+    refine_words = [f for f in clean if f in allWords]
     return refine_words
-#print(tokenize(sentence))
-
-
-
