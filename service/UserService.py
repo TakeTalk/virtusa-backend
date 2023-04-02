@@ -17,5 +17,6 @@ def signupUser(userDetails):
         print('something went wrong')
 
 
-
+def signInUser(email):
+        return userCollection.find_one({"email": email}) is not None
 

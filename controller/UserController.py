@@ -8,3 +8,6 @@ from service.UserService import *
 def signUp(item:UserBody):
     signupUser(dict(item))
 
+@app.post('/signIn')
+def signIn(item:UserBody):
+    signInUser(dict(item))
