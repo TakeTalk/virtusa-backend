@@ -1,7 +1,8 @@
-
 from service.cityNameService import *
-class knowledge:
-    primary = ['ho']
-    knowledgeWords = primary+getAllCityName()
+
+class Knowledge:
+    primary = ['hospital', 'nearby', 'cardiology', 'suggest', 'doctor']
+    knowledgeWords = primary + getAllCityName()
+
     def getKnowledgeBaseWords(self):
         return self.knowledgeWords

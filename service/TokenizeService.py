@@ -2,24 +2,26 @@ import nltk
 import string
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
+from model.knowledgebase import Knowledge
+
 nltk.download('punkt')
 nltk.download('stopwords')
 
-from service.cityNameService import *
+knowledgeWords = Knowledge()
 
-stop =stopwords.words('english')
+allWords = knowledgeWords.getKnowledgeBaseWords();
+
+
+stop = stopwords.words('english')
 pun = list(string.punctuation)
-stop = stop+pun
+stop = stop + pun
 
 
-#sentence= input()
+# sentence= input()
 
 
 def tokenize(sentence):
-    words =word_tokenize(sentence)
+    words = word_tokenize(sentence)
     clean = [w for w in words if not w in stop]
-    refine_words= [f for f in clean if f in knowledge_test]
+    refine_words = [f for f in clean if f in allWords]
     return refine_words
-
-
-
