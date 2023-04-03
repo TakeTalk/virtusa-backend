@@ -1,6 +1,6 @@
 from config import *
 # from pydantic import BaseModel
-from model.UserModel import UserBody
+from model.UserModel import UserBody,SignIn
 from service.UserService import *
 
 
@@ -9,5 +9,5 @@ def signUp(item:UserBody):
     signupUser(dict(item))
 
 @app.post('/signIn')
-def signIn(item:UserBody):
+def signIn(item:SignIn):
     signInUser(dict(item))

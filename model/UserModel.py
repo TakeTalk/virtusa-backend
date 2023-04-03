@@ -7,4 +7,5 @@ class UserBody(BaseModel):
     lastName: str
     rewardsPoints: int
 
-
+class SignIn(BaseModel):
+    email: str
