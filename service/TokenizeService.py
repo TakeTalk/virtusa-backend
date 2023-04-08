@@ -7,6 +7,7 @@ from nltk.stem import LancasterStemmer
 
 from model.knowledgebase import Knowledge
 from service.similarWordsService import *
+from service.LocationService import *
 
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -31,8 +32,9 @@ def stemming(words):
     return outputWords
 
 def similerCheck(words):
-    words = stemming(words)
-    ans = []
+    # words = stemming(words)
+    count = 0
+    ans = {}
     for i in words:
         max = 0
         temp = i
@@ -41,9 +43,13 @@ def similerCheck(words):
             if(ratio>max):
                 temp = j
                 max = ratio
-        if(max>80):
+        if(max>=80):
+            count+=1
             # ans.append({temp,str(max)})
-            ans.append(temp)
+            if(temp in knowledgeWords.ct()):
+                place = temp
+                ans["place"] = fetch(place)
+            else:ans[str(count)]=temp
     return ans
 
 def tokenize(sentence):
