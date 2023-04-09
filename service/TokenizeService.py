@@ -15,6 +15,7 @@ nltk.download('stopwords')
 knowledgeWords = Knowledge()
 
 allWords = knowledgeWords.getKnowledgeBaseWords();
+allCity = knowledgeWords.ct()
 
 
 stop = stopwords.words('english')
@@ -46,10 +47,11 @@ def similerCheck(words):
         if(max>=80):
             count+=1
             # ans.append({temp,str(max)})
-            if(temp in knowledgeWords.ct()):
+            if temp in allCity:
                 place = temp
                 ans["place"] = fetch(place)
-            else:ans[str(count)]=temp
+            else:
+                ans[str(count)]=temp
     return ans
 
 def tokenize(sentence):
