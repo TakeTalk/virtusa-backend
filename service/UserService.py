@@ -4,7 +4,7 @@ from Connection import *
 userCollection = database['userDetails']
 
 
-def signupUser(userDetails):
+def signInUser(userDetails):
 
     try:
         existingUser = userCollection.find_one({"email": userDetails["email"]})
@@ -12,11 +12,8 @@ def signupUser(userDetails):
             userCollection.insert_one(userDetails)
             return userDetails
         else:
-            return 'User exists'
+            return existingUser
     except:
         print('something went wrong')
 
-
-def signInUser(email):
-        return userCollection.find_one({"email": email}) is not None
 
