@@ -4,6 +4,7 @@ from config import *
 from controller.SuggestionController import *
 from controller.UserController import *
 from controller.TokenizeController import *
+from controller.replyController import *
 
 
 if __name__ == '__main__':
