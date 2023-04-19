@@ -17,13 +17,11 @@ knowledgeWords = Knowledge()
 allWords = knowledgeWords.getKnowledgeBaseWords();
 allCity = knowledgeWords.ct()
 
-
 stop = stopwords.words('english')
 pun = list(string.punctuation)
 stop = stop + pun
 
 lancaster = LancasterStemmer()
-
 
 
 def stemming(words):
@@ -32,31 +30,32 @@ def stemming(words):
         outputWords.append(lancaster.stem(w))
     return outputWords
 
+
 def similerCheck(words):
     # words = stemming(words)
     count = 0
-    ans = {}
+    ans = []
     for i in words:
-        max = 0
+        maxRatio = 0
         temp = i
         for j in allWords:
-            ratio = ratioOfSimilarity(i,j)
-            if(ratio>max):
+            ratio = ratioOfSimilarity(i, j)
+            if ratio > maxRatio:
                 temp = j
-                max = ratio
-        if(max>=80):
-            count+=1
+                maxRatio = ratio
+        if maxRatio >= 80:
+            ans.append(temp)
+            # count+=1
             # ans.append({temp,str(max)})
-            if temp in allCity:
-                place = temp
-                ans["place"] = fetch(place)
-            else:
-                ans[str(count)]=temp
+            # if temp in allCity:
+            #     place = temp
+            #     ans["place"] = fetch(place)
+
     return ans
+
 
 def tokenize(sentence):
     words = word_tokenize(sentence)
     clean = [w for w in words if not w in stop]
     refine_words = similerCheck(clean)
     return refine_words
-
