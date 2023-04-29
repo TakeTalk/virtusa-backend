@@ -1,13 +1,17 @@
+import time
+
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-# Step 1) Open Firefox
-browser = webdriver.Chrome()
-# Step 2) Navigate to Facebook
-browser.get("https://www.apollohospitals.com/kolkataapolloconsultleads/")
-# Step 3) Search & Enter the Email or Phone field & Enter Password
-username = browser.find_element_by_id("txtYourName")
-# password = browser.find_element_by_id("pass")
-# submit   = browser.find_element_by_id("loginbutton")
+from selenium.webdriver.common.by import By
+
+options = webdriver.ChromeOptions()
+options.add_experimental_option("detach", True)
+driver = webdriver.Chrome(options=options)
+driver.get('https://www.apollohospitals.com/kolkataapolloconsultleads/')
+
+
+username = driver.find_element(By.ID,'txtYourName')
+selectCity = driver.find_element(By.ID,'city')
+
 username.send_keys("you@email.com")
 # password.send_keys("yourpassword")
 # Step 4) Click Login
