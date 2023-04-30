@@ -32,3 +32,4 @@ def getLocationByEmail(email):
     existingUser = userCollection.find_one({"email": email})
     location = [existingUser['location_lat'], existingUser['location_long']]
     return location
+
