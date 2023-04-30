@@ -23,6 +23,10 @@ def getNameByEmail(email):
     existingUser = userCollection.find_one({"email": email})
     return existingUser['name']
 
+def getPhoneByEmail(email):
+    existingUser = userCollection.find_one({"email": email})
+    return existingUser['phone']
+
 
 def getLocationByEmail(email):
     existingUser = userCollection.find_one({"email": email})

@@ -4,7 +4,8 @@ class Knowledge:
     primary = ['hospital', 'doctor']
     citys = getAllCityName()
     gestureWords = ['hi','hello','hlw',"what's up"]
-    preps=['near me', 'near by']
+    preps=['nearme', 'nearby']
+
     knowledgeWords = primary + citys+gestureWords+preps
 
 
