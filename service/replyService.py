@@ -15,7 +15,7 @@ def replyMessage(sentence, email):
 
     ans=[]
     greet = 'greeting'
-    rslt = 'reasult'
+    rslt = 'hospital suggestion'
     for word in getWords:
         if word in knowledge.gestureWords:
             data[greet]= f'Hello {userName}!!'
