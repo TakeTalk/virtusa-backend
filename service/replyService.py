@@ -29,4 +29,3 @@ def replyMessage(sentence, email):
     ans.append(data)
     return ans
 
-
