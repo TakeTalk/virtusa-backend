@@ -18,3 +18,7 @@ def signInUser(userDetails):
 def getNameByEmail(email):
     existingUser = userCollection.find_one({"email": email})
     return existingUser['name']
+
+def getPhoneByEmail(email):
+    existingUser = userCollection.find_one({"email": email})
+    return existingUser['phone']

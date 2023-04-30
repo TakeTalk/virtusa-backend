@@ -9,6 +9,7 @@ knowledge = Knowledge()
 
 def replyMessage(sentence, email):
     userName = getNameByEmail(email)
+    UserPhone = getPhoneByEmail(email)
     getWords = tokenize(sentence);
     data = defaultdict(list)
 
