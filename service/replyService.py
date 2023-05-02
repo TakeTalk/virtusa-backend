@@ -25,6 +25,8 @@ def replyMessage(sentence, email):
         if word in knowledge.appo:
             getApolloAppointment(email)
             data['appointment']="Appointment booked, you will get a call shortly from Apollo Hospital."
+        else:
+            data['not found']='Sorry not found'
 
     ans.append(data)
     return ans
