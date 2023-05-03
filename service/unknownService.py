@@ -1,11 +1,10 @@
-
 import openai
 
 openai.api_key = "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"
-def emotion(sentence):
-    messages = []
-    messages.append({"role": "system", "content": "You are kind hearted doctor"})
 
+
+def emotion(sentence):
+    messages = [{"role": "system", "content": "You are kind hearted doctor"}]
     message = sentence
     messages.append({"role": "user", "content": message})
     response = openai.ChatCompletion.create(
@@ -13,6 +12,7 @@ def emotion(sentence):
         messages=messages)
     reply = response["choices"][0]["message"]["content"]
     messages.append({"role": "assistant", "content": reply})
-    return  reply + " Also i can suggest you some hospital nearby or your preferred location."
+    additional_msg = " Also I can suggest and book appointment to hospitals on your preferred location."
+    return reply + additional_msg
 
-#print(emotion("i am very sick"))
+# print(emotion("i am very sick"))
