@@ -27,10 +27,9 @@ def replyMessage(sentence, email):
         if word in knowledge.appo:
             getApolloAppointment(email)
             data['appointment']="Appointment booked, you will get a call shortly from Apollo Hospital."
-        else:
-            data ['not found']= emotion(sentence)
 
-
+        if word not in knowledgeWords:                  #openai implement
+            data['not found']= emotion(sentence)
 
 
     ans.append(data)
