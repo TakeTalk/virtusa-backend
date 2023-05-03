@@ -4,13 +4,15 @@ from collections import *
 from service.UserService import *
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+
 
 
 def getApolloAppointment(email):
     name = getNameByEmail(email)
     phone = getPhoneByEmail(email)
-    options = webdriver.ChromeOptions()
-    options.add_experimental_option("detach", True)
+    options = Options()
+    options.headless = True
     driver = webdriver.Chrome(options=options)
     driver.get('https://www.apollo247.com/appointment/index.html')
 
@@ -24,3 +26,6 @@ def getApolloAppointment(email):
     btn = driver.find_element(By.ID, 'submit')
     btn.click()
     driver.close()
+
+
+getApolloAppointment('anikdutta0810@gmail.com')
