@@ -1,3 +1,6 @@
+import threading
+from concurrent.futures import ThreadPoolExecutor
+
 import requests
 from operator import itemgetter
 
@@ -57,7 +60,13 @@ def createLink(lat, lng):
 
 
 def fetch(adr):
-    total = nearby(adr)
+    total = []
+    t1 = threading.Thread(target=total.append(nearby(adr)), args=(10,))
+    t1.start()
+    t1.join()
+
+    total=total[0]
+
     print(len(total))
     total = sorted(total, key=itemgetter('rating'), reverse=True)  # sorting a list of dict by one value which is rating
     name = []

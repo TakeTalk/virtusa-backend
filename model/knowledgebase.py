@@ -7,7 +7,7 @@ class Knowledge:
     preps=['nearme', 'nearby']
     appo=['appoinment']
     hospital=['apollo']
-    knowledgeWords = primary + citys+gestureWords+appo+hospital
+    knowledgeWords = primary + citys + gestureWords + appo + hospital + preps
 
 
 

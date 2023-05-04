@@ -7,7 +7,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
 
-
 def getApolloAppointment(email):
     name = getNameByEmail(email)
     phone = getPhoneByEmail(email)
