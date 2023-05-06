@@ -3,7 +3,7 @@ from service.cityNameService import *
 class Knowledge:
     primary = ['hospital', 'doctor']
     citys = getAllCityName()
-    gestureWords = ['hi','hello','hlw',"what's up"]
+    gestureWords = ['hi','hello','hlw',"what's up",'hey','how are you']
     preps=['nearme', 'nearby']
     appo=['appoinment']
     hospital=['apollo']
