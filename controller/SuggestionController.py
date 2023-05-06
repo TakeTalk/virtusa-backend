@@ -7,7 +7,7 @@ def getSuggestionByLocation(address):
     return fetch(address)
 
 
-@app.get('/suggest-hospital-by-latlong')
-def getSuggestionByLatLong(lat, longt):
+@app.get('/suggest-hospital-by-latlong/{lat}/{longt}')
+def getSuggestionByLatLong(lat:str, longt:str):
     return fetchByLatLong(lat, longt)
 

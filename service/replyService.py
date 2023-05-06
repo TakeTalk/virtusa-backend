@@ -21,9 +21,9 @@ def replyMessage(sentence, email):
         if word in knowledge.gestureWords:
             data[greet] = f'Hello {userName} ! How can I assist you today?'
         if word in knowledge.citys:
-            data[sgst] = fetch(word)
+            data[sgst] = getHospitalSuggestionByAddress(word)
         if word in knowledge.preps:
-            data[sgst] = fetchByLatLong(word)
+            data[sgst] = getHospitalSuggestionNearby(email)
         if word in knowledge.appo:
             getApolloAppointment(email)
             data['appointment'] = "Appointment booked, you will get a call shortly from Apollo Hospital."
