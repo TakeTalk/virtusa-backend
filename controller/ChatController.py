@@ -9,7 +9,7 @@ import json
 
 
 @app.get("/getChat/{email}")
-def getChatByEmail(email: str):
+def getChatByEmail(email: str) -> list[ChatModel]:
     return getChat(email)
 
 
