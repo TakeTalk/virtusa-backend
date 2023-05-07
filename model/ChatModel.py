@@ -1,3 +1,9 @@
+class Author:
+    id: str
+
+
 class ChatModel:
-    userMsg: str
-    botRply: str
+    author: Author
+    createdAt: int
+    id: str
+    text: str
