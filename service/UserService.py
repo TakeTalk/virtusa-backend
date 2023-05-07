@@ -1,4 +1,5 @@
 from Connection import *
+from service.ChatService import addChat
 
 userCollection = database['userDetails']
 
@@ -9,6 +10,7 @@ def signInUser(userDetails):
         existingUser = userCollection.find_one(query)
         if existingUser is None:
             userCollection.insert_one(userDetails)
+            addChat(userDetails["email"])
             return userDetails
         else:
             updatedLocation = {
