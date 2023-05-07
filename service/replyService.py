@@ -19,7 +19,6 @@ def replyMessage(sentence, email):
     suggest = 'hospital suggestion'
     leave ='exit'
     doc='this is me'
-    sgst = 'hospital suggestion'
 
     if 'hospital' in getWords or 'doctor' in getWords or 'clinic' in getWords:
         for word in getWords:
