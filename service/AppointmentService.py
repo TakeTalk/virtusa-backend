@@ -10,8 +10,6 @@ from selenium.webdriver.chrome.options import Options
 def getApolloAppointment(email):
     name = getNameByEmail(email)
     phone = getPhoneByEmail(email)
-    name = getNameByEmail(email)
-    phone = getPhoneByEmail(email)
 
     options = Options()
 
@@ -33,5 +31,3 @@ def getApolloAppointment(email):
     btn.click()
     driver.close()
 
-
-getApolloAppointment('anikdutta0810@gmail.com')
