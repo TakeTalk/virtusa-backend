@@ -18,8 +18,13 @@ allWords = knowledgeWords.getKnowledgeBaseWords();
 allCity = knowledgeWords.ct()
 
 stop = stopwords.words('english')
+
 stop.pop(1)
 stop.pop(1)
+stop.pop(35)
+stop.pop(6)
+stop.pop(12)
+
 pun = list(string.punctuation)
 stop = stop + pun
 
