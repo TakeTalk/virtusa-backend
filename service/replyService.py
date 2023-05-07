@@ -15,6 +15,8 @@ def replyMessage(sentence, email):
 
     ans = []
     greet = 'greeting'
+    leave ='exit'
+    doc='this is me'
     sgst = 'hospital suggestion'
 
     if 'hospital' in getWords:
@@ -27,6 +29,23 @@ def replyMessage(sentence, email):
         if 'appointment' in getWords:
             getApolloAppointment(email)
             data['appointment'] = "Appointment booked, you will get a call shortly from Apollo Hospital."
+
+    if 'bye' in getWords:
+        data['bye'] =f'good bye {userName}!'
+
+
+    '''
+    for w in getWords:
+        if w == 'bye':
+            data[leave]=f'good bye {userName}!'
+        if w in knowledgeWords.unexpected:
+            data[leave]= "my pleasure"
+    '''
+
+
+    for w in getWords:
+        if w in knowledgeWords.unexpected:
+            data[doc]="I am proton !"
 
     for word in getWords:
         if word in knowledge.gestureWords:
