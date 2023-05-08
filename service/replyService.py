@@ -66,10 +66,9 @@ def replyMessage(sentence, email):
     if 'yourself' in getWords:
         data[doc]="Hey there! I am proton . Ah, it was a long process. 3 genius guys .. Oops 😐 sorry 5 genius guys made me this much capable to handle heavy task. I am very thankful to them."
 
-   if(w for w in getW)
-        #if word in knowledge.gestureWords:
-    #if 'hi' in getWords:
-        data[greet] = f'Hello {userName} ! How can I assist you today?'
+    for word in getWords:
+        if word in knowledge.gestureWords:
+            data[greet] = f'Hello {userName} ! How can I assist you today?'
 
     if data == {}:
         data['not found'] = emotion(sentence)
