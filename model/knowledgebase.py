@@ -6,9 +6,12 @@ class Knowledge:
     cities = getAllCityName()
     gestureWords = ['hi', 'hello', 'hlw', "what's up", 'hey', 'how are you']
     preps = ['near', 'around', 'here']
+    leaving = ['bye', 'good']
+    unexpected = ['what', 'name', 'who' , 'yourself']
+    greetUser=['thank', 'you']
     appointment = ['appointment', 'book']
     hospital = ['apollo']
-    knowledgeWords = primary + cities + gestureWords + appointment + hospital + preps
+    knowledgeWords = primary + cities + gestureWords + appointment + hospital + preps + unexpected + leaving + greetUser
 
     def ct(self):
         return self.cities
