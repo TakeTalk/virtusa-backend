@@ -47,3 +47,21 @@ def getLocationByEmail(email):
     existingUser = userCollection.find_one({"email": email})
     location = [existingUser['location_lat'], existingUser['location_long']]
     return location
+
+
+def editPhone(email, phone):
+    query = {"email": email}
+    existingUser = userCollection.find_one(query)
+    updatedPhone = {
+        "$set": {"phone": phone}}
+    userCollection.update_one(query, updatedPhone)
+    return userCollection.find_one(query)
+
+
+def getPhoneByMail(email):
+    query = {"email": email}
+    existingUser = userCollection.find_one(query)
+    if existingUser is not None:
+        return existingUser['phone']
+    else:
+        return None
