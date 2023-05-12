@@ -38,7 +38,7 @@ def stemming(words):
     return outputWords
 
 
-def similerCheck(words):
+def similarCheck(words):
     # words = stemming(words)
     count = 0
     ans = []
@@ -64,5 +64,5 @@ def similerCheck(words):
 def tokenize(sentence):
     words = word_tokenize(sentence)
     clean = [w for w in words if not w in stop]
-    refine_words = similerCheck(clean)
+    refine_words = similarCheck(clean)
     return refine_words
