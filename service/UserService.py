@@ -1,7 +1,11 @@
 from Connection import *
+from model.userOrganModel import UserOrganStatus
+
 from service.ChatService import addChat
+from service.UserOrganService import addHealth
 
 userCollection = database['userDetails']
+
 
 
 def signInUser(userDetails):
@@ -11,6 +15,8 @@ def signInUser(userDetails):
         if existingUser is None:
             userCollection.insert_one(userDetails)
             addChat(userDetails["email"])
+            addHealth(userDetails["email"])
+
             return userDetails
         else:
             updatedLocation = {
@@ -56,6 +62,21 @@ def editPhone(email, phone):
         "$set": {"phone": phone}}
     userCollection.update_one(query, updatedPhone)
     return userCollection.find_one(query)
+
+
+def updatePoint(email, point):
+    query = {"email": email}
+    existingUser = userCollection.find_one(query)
+    updatedPoints = {
+        "$set": {"rewardsPoints": point}}
+    userCollection.update_one(query, updatedPoints)
+    return userCollection.find_one(query)
+
+
+def getPoint(email):
+    query = {"email": email}
+    user = userCollection.find_one(query)
+    return user['rewardsPoints']
 
 
 def getPhoneByMail(email):
