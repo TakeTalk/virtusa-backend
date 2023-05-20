@@ -22,6 +22,7 @@ def getInsurance(userHealth):
     if userHealth['brain']:
         tempIns = ['Get 10% Off at Insurance on Brain', 2000, 'test']
         insurance.append(tempIns)
+
     return insurance
 
 
