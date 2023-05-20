@@ -42,6 +42,7 @@ def replyMessage(sentence, email):
     if 'book' in getWords:
         if 'appointment' in getWords:
             getApolloAppointment(email)
+            updatePoint(email, 100)
             data[
                 'appointment'] = f"Congratulations !! Your appointment is successfully booked to Appolo Hospital.Hospital representative will call you at {phone} shortly."
 

@@ -28,19 +28,19 @@ def detect_text(file: UploadFile, email: str, timeStamp: str):
     for text in textDetections:
         if text['Type'] == 'LINE':
             if checkMedicine(text['DetectedText']):
-                medicines.append(medSuggestion(text['DetectedText']))
+                medicines.append(medSuggestion(email, text['DetectedText']))
     return medicines
 
 
 def checkMedicine(sentence: str):
-    words = word_tokenize(sentence)
+    words = word_tokenize(sentence.lower())
     knowledge = Knowledge()
     for w in words:
         if knowledge.medicineSigns.get(w) is not None:
             return True
 
 
-def medSuggestion(sentence: str):
+def medSuggestion(email: str, sentence: str):
     sentence = sentence.lower()
     words = word_tokenize(sentence)
     knowledge = Knowledge()
@@ -52,4 +52,6 @@ def medSuggestion(sentence: str):
             medTimes[sentence] = knowledge.medicineTime.get(w)
     if flag is False:
         medTimes[sentence] = 'My knowledge base is too limited to understand'
+    else:
+        updatePoint(email, 50)
     return medTimes
