@@ -33,6 +33,7 @@ def detect_text(file: UploadFile, email: str, timeStamp: str):
 
 
 def checkMedicine(sentence: str):
+    if 'mg' in sentence : return True
     words = word_tokenize(sentence.lower())
     knowledge = Knowledge()
     for w in words:
@@ -44,14 +45,9 @@ def medSuggestion(email: str, sentence: str):
     sentence = sentence.lower()
     words = word_tokenize(sentence)
     knowledge = Knowledge()
-    medTimes = {}
+    allMedicines = []
     flag = False
     for w in words:
-        if knowledge.medicineTime.get(w) is not None:
-            flag = True
-            medTimes[sentence] = knowledge.medicineTime.get(w)
-    if flag is False:
-        medTimes[sentence] = 'My knowledge base is too limited to understand'
-    else:
-        updatePoint(email, 50)
+        medTimes = {'name': sentence, 'time': knowledge.medicineTime.get(w), 'price': 102.50}
+    updatePoint(email, 50)
     return medTimes

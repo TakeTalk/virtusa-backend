@@ -1,6 +1,7 @@
 import app
 from config import *
 from model.UserModel import UserBody
+from model.userOrganModel import UserOrganStatus
 from service.UserService import *
 from service.UserOrganService import *
 
@@ -40,10 +41,9 @@ def getPhone(email: str):
 
 
 @app.put('/updateHealth/{email}')
-def updatePhone(email: str, userHealth: UserOrganStatus):
+def updateUserHealth(email: str, userHealth: UserOrganStatus):
     response = updateHealth(userHealth, email)
-    json_response = json.loads(json_util.dumps(response))
-    return json_response
+    return response
 
 # @app.post('/addChat')
 # def postChat():
