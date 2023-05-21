@@ -8,5 +8,5 @@ class UserOrganStatus(BaseModel):
     lungs: bool | None = False
     liver: bool | None = False
     kidney: bool | None = False
-    ortho: bool | None = False
+    bone: bool | None = False
 

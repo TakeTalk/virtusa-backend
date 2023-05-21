@@ -14,6 +14,8 @@ class Knowledge:
     knowledgeWords = primary + cities + gestureWords + appointment + hospital + preps + unexpected + leaving + greetUser
 
     medicineSigns = {
+        'ml': "milli liter",
+        'mg': "milli gram",
         'ac': "before meals",
         'bid': "twice a day",
         'gt': "drop",

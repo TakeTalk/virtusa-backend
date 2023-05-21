@@ -1,11 +1,9 @@
 from Connection import *
-from model.userOrganModel import UserOrganStatus
 
 from service.ChatService import addChat
 from service.UserOrganService import addHealth
 
 userCollection = database['userDetails']
-
 
 
 def signInUser(userDetails):
