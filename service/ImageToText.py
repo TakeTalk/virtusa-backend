@@ -29,11 +29,12 @@ def detect_text(file: UploadFile, email: str, timeStamp: str):
         if text['Type'] == 'LINE':
             if checkMedicine(text['DetectedText']):
                 medicines.append(medSuggestion(email, text['DetectedText']))
-    return medicines
+    allMedicines = {'medicineSuggestion': medicines}
+    return allMedicines
 
 
 def checkMedicine(sentence: str):
-    if 'mg' in sentence : return True
+    if 'mg' in sentence: return True
     words = word_tokenize(sentence.lower())
     knowledge = Knowledge()
     for w in words:
@@ -46,8 +47,10 @@ def medSuggestion(email: str, sentence: str):
     words = word_tokenize(sentence)
     knowledge = Knowledge()
     allMedicines = []
+    medTimes = {}
     flag = False
     for w in words:
-        medTimes = {'name': sentence, 'time': knowledge.medicineTime.get(w), 'price': 102.50}
+        if knowledge.medicineTime.get(w) is not None:
+            medTimes = {'name': sentence, 'time': knowledge.medicineTime.get(w), 'price': 102.50}
     updatePoint(email, 50)
     return medTimes
