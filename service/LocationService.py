@@ -94,9 +94,9 @@ def getHospitalSuggestionByAddress(adr):
 
 
 def getHospitalSuggestionNearby(email):
-    location = getLocationByEmail(email)
-    return fetch(location[0], location[1])
-
+    # location = getLocationByEmail(email)
+    # return fetch(location[0], location[1])
+    return getHospitalSuggestionByAddress('chinsurah')
 # print(getHospitalSuggestionByAddress('chandannagar'))
 
 # https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=34.2268475,77.56194189999999&radius=15000&type=lodging&key=API_KEY'
