@@ -52,5 +52,7 @@ def medSuggestion(email: str, sentence: str):
     for w in words:
         if knowledge.medicineTime.get(w) is not None:
             medTimes = {'name': sentence, 'time': knowledge.medicineTime.get(w), 'price': 102.50}
-    updatePoint(email, 50)
-    return medTimes
+            updatePoint(email, 50)
+        else:
+            medTimes = {'name': sentence, 'time': 'Sorry my knowledge base is too short to understand', 'price': 102.50}
+        return medTimes
