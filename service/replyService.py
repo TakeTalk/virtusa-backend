@@ -44,7 +44,7 @@ def replyMessage(sentence, email):
             getApolloAppointment(email)
             updatePoint(email, 100)
             data[
-                'appointment'] = f"Congratulations !! Your appointment is successfully booked to Appolo Hospital.Hospital representative will call you at {phone} shortly."
+                'appointment'] = f"Congratulations !! Your appointment is successfully booked to Appolo Hospital. You wll recieve a call within 15 mins from +918045-305-263."
 
     if 'bye' in getWords:
         data[leave] = f'Good bye {userName}!, see you soon! :)'
