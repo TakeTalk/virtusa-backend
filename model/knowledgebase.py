@@ -11,7 +11,8 @@ class Knowledge:
     greetUser = ['thank', 'you']
     appointment = ['appointment', 'book']
     hospital = ['apollo']
-    knowledgeWords = primary + cities + gestureWords + appointment + hospital + preps + unexpected + leaving + greetUser
+    medicineOrder = ['yes', 'yeah', 'confirm', 'cancel', 'upi', 'no']
+    knowledgeWords = primary + cities + gestureWords + appointment + hospital + preps + unexpected + leaving + greetUser + medicineOrder
 
     medicineSigns = {
         'ml': "milli liter",

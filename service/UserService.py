@@ -84,3 +84,35 @@ def getPhoneByMail(email):
         return existingUser['phone']
     else:
         return None
+
+
+def updateMedicine(email, medicine: bool):
+    query = {"email": email}
+    existingUser = userCollection.find_one(query)
+    updatedMeds = {
+        "$set": {"medicine": medicine}}
+    userCollection.update_one(query, updatedMeds)
+    return medicine
+
+
+def updateInsurance(email, insurance: bool):
+    query = {"email": email}
+    existingUser = userCollection.find_one(query)
+    updatedIns = {
+        "$set": {"insurance": insurance}}
+    userCollection.update_one(query, updatedIns)
+    return insurance
+
+
+def getMedStatus(email):
+    query = {"email": email}
+    existingUser = userCollection.find_one(query)
+    if existingUser is not None:
+        return existingUser['medicine']
+
+
+def getInsStatus(email):
+    query = {"email": email}
+    existingUser = userCollection.find_one(query)
+    if existingUser is not None:
+        return existingUser['insurance']

@@ -9,4 +9,5 @@ class UserBody(BaseModel):
     rewardsPoints: int
     location_lat: str
     location_long: str
-    # chats: list
+    medicine: bool
+    insurance: bool
