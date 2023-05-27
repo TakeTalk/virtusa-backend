@@ -30,6 +30,8 @@ def detect_text(file: UploadFile, email: str, timeStamp: str):
             if checkMedicine(text['DetectedText']):
                 medicines.append(medSuggestion(email, text['DetectedText']))
     allMedicines = {'medicineSuggestion': medicines}
+    if medicines is not []:
+        updateMedicine(email, True)
     return allMedicines
 
 
