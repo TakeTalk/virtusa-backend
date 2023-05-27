@@ -46,34 +46,34 @@ def replyMessage(sentence, email):
                 getApolloAppointment(email)
                 updatePoint(email, 100)
                 data[
-                    'appointment'] = f"Congratulations !! 🥳 Your appointment is successfully booked to Appolo Hospital. You wll recieve a call within 15 mins from +918045-305-263."
+                    'appointment'] = f"Congratulations !! 🥳 Your appointment is successfully booked to Appolo Hospital. You wll recieve a call within 15 mins from +918045-305-263.".encode(encoding='UTF-8',errors='strict')
 
         if 'bye' in getWords:
             data[leave] = f'Good bye {userName}!, see you soon! :)'
 
         if 'thank' in getWords:
             if 'you' in getWords:
-                data[leave] = "As a good doctor, it is my duty to help you , to understand you 😊."
+                data[leave] = "As a good doctor, it is my duty to help you , to understand you 😊.".encode(encoding='UTF-8',errors='strict')
 
         if 'about' in getWords:
             if 'yourself' in getWords:
                 data[
-                    doc] = "Hey there! I am proton . Ah, it was a long process. 3 genius guys .. Oops 😐 sorry 5 genius guys made me this much capable to handle heavy task. I am very thankful to them."
+                    doc] = "Hey there! I am proton . Ah, it was a long process. 3 genius guys .. Oops 😐 sorry 5 genius guys made me this much capable to handle heavy task. I am very thankful to them.".encode(encoding='UTF-8',errors='strict')
             if 'you' in getWords:
                 data[
-                    doc] = "Hey there! I am proton . Ah, it was a long process. 3 genius guys .. Oops 😐 sorry 5 genius guys made me this much capable to handle heavy task. I am very thankful to them."
+                    doc] = "Hey there! I am proton . Ah, it was a long process. 3 genius guys .. Oops 😐 sorry 5 genius guys made me this much capable to handle heavy task. I am very thankful to them.".encode(encoding='UTF-8',errors='strict')
             if 'your' in getWords:
                 data[
-                    doc] = "Hey there! I am proton . Ah, it was a long process. 3 genius guys .. Oops 😐 sorry 5 genius guys made me this much capable to handle heavy task. I am very thankful to them."
+                    doc] = "Hey there! I am proton . Ah, it was a long process. 3 genius guys .. Oops 😐 sorry 5 genius guys made me this much capable to handle heavy task. I am very thankful to them.".encode(encoding='UTF-8',errors='strict')
 
         if 'who' in getWords:
             if 'you' in getWords:
                 data[
-                    doc] = "Hey there! I am proton . Ah, it was a long process. 3 genius guys .. Oops 😐 sorry 5 genius guys made me this much capable to handle heavy task. I am very thankful to them."
+                    doc] = "Hey there! I am proton . Ah, it was a long process. 3 genius guys .. Oops 😐 sorry 5 genius guys made me this much capable to handle heavy task. I am very thankful to them.".encode(encoding='UTF-8',errors='strict')
 
         for word in getWords:
             if word in knowledge.gestureWords:
-                data[greet] = f'Hello {userName} ! How can I assist you today?'
+                data[greet] = f'Hello {userName} ! How can I assist you today? 🙂'.encode(encoding='UTF-8',errors='strict')
 
         if data == {}:
             data['not found'] = emotion(sentence)
@@ -88,7 +88,7 @@ def replyMessage(sentence, email):
                 flag = True
 
             if 'upi' in getWords:
-                data['order'] = "Thank you for purchasing medicines from us !!\n\n You've received 100 Proton coins 🥳🎉"
+                data['order'] = "Thank you for purchasing medicines from us !!\n\n You've received 100 Proton coins 🥳🎉".encode(encoding='UTF-8',errors='strict')
                 updateMedicine(email, False)
                 flag = True
 
